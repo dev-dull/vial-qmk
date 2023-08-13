@@ -149,7 +149,7 @@ static void render_locks(void) {
     0x8e, 0x80, 0x80, 0x80, 0x80, 0x8f, 0x9f, 0x9f, 0x9f, 0x8f, 0x80, 0x80, 0x80, 0x80, 0x40, 0x3f
   };
 
-  static char rendered_image[ANIM_SIZE];
+  static char PROGMEM rendered_image[ANIM_SIZE];
   led_t led_state = host_keyboard_led_state();
   int imgi = -1;
   const int WIDTH = 128;
@@ -161,7 +161,7 @@ static void render_locks(void) {
     } else if (i%WIDTH >= WIDTH-64) {
       rendered_image[i] = led_state.scroll_lock? scroll_lock[imgi] : empty[imgi];
     } else if (i%WIDTH >= WIDTH-96) {
-      rendered_image[i] = led_state.scroll_lock? caps_lock[imgi] : empty[imgi];
+      rendered_image[i] = led_state.caps_lock? caps_lock[imgi] : empty[imgi];
     } else {
       rendered_image[i] = xt_logo[imgi];
     }
