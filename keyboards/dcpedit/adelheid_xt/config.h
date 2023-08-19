@@ -36,8 +36,7 @@
 #define UNUSED_PINS
 
 /* encoder pins */
-#define ENCODERS_PAD_A { A5 }
-#define ENCODERS_PAD_B { A6 }
+#define ENCODERS_PAD { A5, A6 }
 
 /* encoder resolution */
 #define ENCODER_RESOLUTION 4
